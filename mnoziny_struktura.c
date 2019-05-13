@@ -6,6 +6,29 @@ typedef struct{
 	unsigned int dlzka;
 }MNC;
 
+void prienik(MNC* a, MNC* b, MNC* c)
+{
+	int i,j,h=0;
+	
+	for(i=0;i<6;i++)
+	{
+		for(j=0;j<6;j++)
+		{
+			if(a->pole[i]==b->pole[j])
+			{	
+				c->pole[h]=a->pole[i];
+				h++;
+			}
+		}
+	}
+	
+	for(i=0;i<h;i++)
+	{
+		printf("%d ",c->pole[i]);
+	}
+}
+
+
 int main(void)
 {
 	int i,j,n=0,h=0;
@@ -30,5 +53,10 @@ int main(void)
 	{
 		printf("%d ",B[i]);
 	}
+	
+	printf("\n");
+	
+	printf("prienik mnozin: ");
+	prienik(&a,&b,&c);
   
  }
